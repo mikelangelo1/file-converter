@@ -12,10 +12,6 @@ def find_most_negative_binding_affinity_row(csv_file_path):
         
         # Process each row in the CSV
         for row in reader:
-            # Ensure the row has at least 4 elements
-            if len(row) < 4:
-                continue
-            
             ligand = row[0]
             binding_affinity = float(row[1])
             rmsd_ub = float(row[2])
@@ -55,6 +51,6 @@ def main(input_csv_path, output_csv_path):
     print(f"Results have been written to '{output_csv_path}'")
 
 if __name__ == "__main__":
-    input_file = "/Users/mac/Desktop/hackbio-internship/Resources/PyRx-result_5EDP.csv" 
-    output_file = "most_negative_binding_affinities.csv"
+    input_file = "/Users/mac/Desktop/hackbio-internship/stage-4/hdac11/hdac11-3.csv" 
+    output_file = "HDAC11_3.csv"
     main(input_file, output_file)
