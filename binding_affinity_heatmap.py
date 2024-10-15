@@ -41,10 +41,11 @@ average_affinity.to_csv('combined_average_binding_affinity_HBAC.csv')
 # Plotting the heatmap using seaborn
 plt.figure(figsize=(25, 10))
 sns.heatmap(average_affinity, annot=True, cmap='coolwarm', cbar=True, annot_kws={"size": 6})
-plt.title('Heatmap of Average Binding Affinity (HBAC 1 to 11)')
+plt.title('Heatmap of Average Binding Affinity (HBAC 1 to 11) to 61 ligands')
 plt.ylabel('HBAC')
-plt.xlabel('Samples')  # Adjust this depending on how you want to label the columns
-plt.xticks(rotation=45)  # Rotate x-axis labels if needed for better readability
+plt.yticks(rotation=45)  
+plt.xlabel('Ligands')  
+plt.xticks(rotation=45)  
 
 # Display the heatmap
 plt.show()
