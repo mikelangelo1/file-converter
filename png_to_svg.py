@@ -26,7 +26,7 @@ def convert_all_svg_to_png(folder_path, dpi=300):
             print(f"Converted {filename} to {png_file_name} with DPI {dpi}")
 
 # Example usage:
-folder_path = "/Users/mac/Desktop/file-converter/4.5-decomps/Cluster-1-decomp" 
+folder_path = "/Users/mac/Desktop/file-converter/7.4-decomps/wild-decomp" 
 desired_dpi = 600
 
 convert_all_svg_to_png(folder_path, dpi=desired_dpi)
