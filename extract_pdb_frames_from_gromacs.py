@@ -44,14 +44,12 @@ def prepare_trajectory(xtc_file, tpr_file, output_xtc):
     """
     print("Preparing trajectory...")
     
-    # Center on protein and make molecule whole
-    cmd = f"gmx trjconv -f {xtc_file} -s {tpr_file} -pbc mol -center"
-    stdout, _ = run_command(cmd, stdin_text="1\n1\n")  # Select protein for both centering and output
-    
     # Remove periodic boundary conditions
     temp_xtc = "temp_nopbc.xtc"
-    cmd = f"gmx trjconv -f {output_xtc} -s {tpr_file} -pbc nojump -o {temp_xtc}"
-    stdout, _ = run_command(cmd, stdin_text="1\n")  # Select protein
+    
+    # Center on protein and make molecule whole
+    cmd = f"gmx trjconv -f {xtc_file} -s {tpr_file} -pbc nojump -center -o {temp_xtc}"
+    stdout, _ = run_command(cmd, stdin_text="1\n0\n")  # Select protein for both centering and output
     
     # Move temporary file to final output
     os.rename(temp_xtc, output_xtc)
